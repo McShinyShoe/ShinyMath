@@ -2,6 +2,7 @@
 #include <string>
 #include <unordered_map>
 #include <cstddef>
+#include <memory>
 
 namespace shiny {
     template<typename return_type, typename key_type = std::string>
@@ -22,6 +23,9 @@ namespace shiny {
         }
         inline return_type get() const {
             return value_m;
+        }
+        inline std::shared_ptr<Term<return_type, key_type>> copy() {;
+            return std::static_pointer_cast<Term<return_type, key_type>>(std::make_shared<Constanta>(*this));
         }
     
         Constanta() : value_m(0) {};

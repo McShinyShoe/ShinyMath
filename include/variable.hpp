@@ -4,6 +4,7 @@
 #include <cstddef>
 #include "variable_list.hpp"
 #include "variable_list.hpp"
+#include <memory>
 
 namespace shiny {
     template<typename return_type, typename key_type = std::string>
@@ -24,6 +25,9 @@ namespace shiny {
         }
         inline key_type get() const {
             return variable_m;
+        }
+        inline std::shared_ptr<Term<return_type, key_type>> copy() {;
+            return std::static_pointer_cast<Term<return_type, key_type>>(std::make_shared<Variable>(*this));
         }
 
         Variable() : variable_m("") {};
