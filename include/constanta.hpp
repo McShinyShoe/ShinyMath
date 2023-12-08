@@ -21,7 +21,7 @@ namespace shiny {
         inline return_type get() const {
             return value_m;
         }
-        inline std::shared_ptr<Term<return_type, key_type>> copy() {;
+        inline std::shared_ptr<Term<return_type, key_type>> copy() const {;
             return std::static_pointer_cast<Term<return_type, key_type>>(std::make_shared<Constanta>(*this));
         }
     

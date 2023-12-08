@@ -23,10 +23,10 @@ namespace shiny {
         inline void setDenominator(const return_type& value) {
             denominator_m = std::static_pointer_cast<Term<return_type, key_type>>(std::make_shared<Constanta<return_type, key_type>>(Constanta<return_type, key_type>(value)));
         }
-        inline void setNumerator(Term<return_type, key_type>& value) {
+        inline void setNumerator(const Term<return_type, key_type>& value) {
             numerator_m = value.copy();
         }
-        inline void setDenominator(Term<return_type, key_type>& value) {
+        inline void setDenominator(const Term<return_type, key_type>& value) {
             denominator_m = value.copy();
         }
         inline std::shared_ptr<Term<return_type, key_type>> getNumerator() const {
@@ -35,7 +35,7 @@ namespace shiny {
         inline std::shared_ptr<Term<return_type, key_type>> getDenominator() const {
             return denominator_m->copy();
         }
-        inline std::shared_ptr<Term<return_type, key_type>> copy() {;
+        inline std::shared_ptr<Term<return_type, key_type>> copy() const {;
             return std::static_pointer_cast<Term<return_type, key_type>>(std::make_shared<Fraction>(*this));
         }
     
