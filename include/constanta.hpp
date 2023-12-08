@@ -18,9 +18,6 @@ namespace shiny {
         inline void set(const return_type value) {
             value_m = value;
         }
-        inline return_type& get() {
-            return value_m;
-        }
         inline return_type get() const {
             return value_m;
         }

@@ -20,9 +20,6 @@ namespace shiny {
         inline void set(const key_type variable) {
             variable_m = variable;
         }
-        inline key_type& get() {
-            return variable_m;
-        }
         inline key_type get() const {
             return variable_m;
         }
