@@ -9,7 +9,7 @@ namespace shiny {
         inline return_type calculate() {
             return this->calculate({});
         };
-        inline virtual return_type calculate(VariableList<return_type, key_type>& variableList) {
+        inline virtual return_type calculate(const VariableList<return_type, key_type>& variableList) {
             return 0;
         };
     };

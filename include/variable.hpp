@@ -13,8 +13,8 @@ namespace shiny {
 
     public:
         using Term<return_type, key_type>::calculate;
-        inline return_type calculate(VariableList<return_type, key_type>& variableList) {
-            return variableList[variable_m];
+        inline return_type calculate(const VariableList<return_type, key_type>& variableList) {
+            return variableList.at(variable_m);
         };
         inline void set(const key_type variable) {
             variable_m = variable;
